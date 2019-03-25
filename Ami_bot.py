@@ -2,7 +2,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from telegram.ext import CommandHandler
 from telegram import ChatAction
 
-
 def start(bot, update):
     update.message.reply_text("Benvenuto!")
 
@@ -10,6 +9,7 @@ def start(bot, update):
 def showtasks(bot, update):
     i = 1
     bot.sendChatAction(update.message.chat_id, ChatAction.TYPING)
+    if (tasks.)
     strng = ""
     for task in sorted(tasks):
         strng = strng + str(i) + ". " + task + "\n"
@@ -18,9 +18,9 @@ def showtasks(bot, update):
 
 
 def newTask(bot, update, args):
-    update.message.reply_text("Aggiungi il task")
     task = ' '.join(args)
     tasks.append(task)
+    update.message.reply_text("Task aggiunto!")
 
 
 if __name__ == '__main__':
